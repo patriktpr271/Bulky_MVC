@@ -5,13 +5,11 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyWeb", "BulkyWeb\BulkyWeb.csproj", "{623E2AE9-B262-4304-AC2C-BBFDC4A862CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkyWebRazor_Temp", "BulkyWebRazor_Temp\BulkyWebRazor_Temp.csproj", "{26BCED9B-68B9-4E39-BCBE-C9ED6DFAD21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulky.DataAccess", "Bulky.DataAccess\Bulky.DataAccess.csproj", "{FC2407CE-42FE-4B66-AD21-369A9A7E9A2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.DataAccess", "Bulky.DataAccess\Bulky.DataAccess.csproj", "{FC2407CE-42FE-4B66-AD21-369A9A7E9A2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulky.Models", "Bulky.Models\Bulky.Models.csproj", "{B1A480F9-43ED-4D02-A8C2-EBE1C9B4FE28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Models", "Bulky.Models\Bulky.Models.csproj", "{B1A480F9-43ED-4D02-A8C2-EBE1C9B4FE28}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Utility", "Bulky.Utility\Bulky.Utility.csproj", "{C0E9587D-ABD1-4290-A897-A4059879E99B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulky.Utility", "Bulky.Utility\Bulky.Utility.csproj", "{C0E9587D-ABD1-4290-A897-A4059879E99B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{623E2AE9-B262-4304-AC2C-BBFDC4A862CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623E2AE9-B262-4304-AC2C-BBFDC4A862CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623E2AE9-B262-4304-AC2C-BBFDC4A862CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26BCED9B-68B9-4E39-BCBE-C9ED6DFAD21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26BCED9B-68B9-4E39-BCBE-C9ED6DFAD21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26BCED9B-68B9-4E39-BCBE-C9ED6DFAD21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26BCED9B-68B9-4E39-BCBE-C9ED6DFAD21E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC2407CE-42FE-4B66-AD21-369A9A7E9A2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC2407CE-42FE-4B66-AD21-369A9A7E9A2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2407CE-42FE-4B66-AD21-369A9A7E9A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
