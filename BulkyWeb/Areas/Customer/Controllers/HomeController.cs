@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Bulky.Models;
 using Bulky.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace BulkyWeb.Areas.Customer.Controllers
 {
@@ -26,8 +28,41 @@ namespace BulkyWeb.Areas.Customer.Controllers
 
         public IActionResult Details(int productId)
         {
-            Product product = _unitOfWork.Product.Get(u=>u.Id== productId, includeProperties: "Category");
-            return View(product);
+            ShoppingCart cart = new ShoppingCart()
+            {
+                Product = _unitOfWork.Product.Get(u=>u.Id== productId, includeProperties: "Category"),
+                Count = 1,
+                ProductId = productId
+            };
+            
+            return View(cart);
+        }
+        [HttpPost]
+        [Authorize]
+        public IActionResult Details(ShoppingCart cart)
+        {
+            //get the user id of the logged in user
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+            cart.ApplicationUserId = userId;
+
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.
+                Get(u => u.ApplicationUserId == cart.ApplicationUserId && u.ProductId == cart.ProductId);
+            if(cartFromDb != null)
+            {
+                //shopping cart item already exists for this product and user
+                cartFromDb.Count += cart.Count;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+            }
+            else
+            {
+                //shopping cart item doesn't exist for this product and user so we add a new one
+                _unitOfWork.ShoppingCart.Add(cart);
+            }
+            TempData["success"] = "Cart updated successfully";
+            _unitOfWork.Save();
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()
