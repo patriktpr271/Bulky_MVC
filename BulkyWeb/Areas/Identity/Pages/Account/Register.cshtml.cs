@@ -211,8 +211,17 @@ namespace BulkyWeb.Areas.Identity.Pages.Account
 					}
 					else
 					{
-						await _signInManager.SignInAsync(user, isPersistent: false);
-						return LocalRedirect(returnUrl);
+						if(User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
+						{
+							//admin is creating a new user we don't want it to sign  in
+							TempData["Success"] = "New User created successfully";
+						}
+						else
+						{
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                            return LocalRedirect(returnUrl);
+                        }
+						
 					}
 				}
 				foreach (var error in result.Errors)

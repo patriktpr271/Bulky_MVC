@@ -4,6 +4,7 @@ using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240623095109_ChangeProductToTechGadgets")]
+    partial class ChangeProductToTechGadgets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,25 +50,19 @@ namespace Bulky.DataAccess.Migrations
                         {
                             CategoryId = 1,
                             DisplayOrder = 1,
-                            Name = "Headphones"
+                            Name = "Action"
                         },
                         new
                         {
                             CategoryId = 2,
                             DisplayOrder = 2,
-                            Name = "Smartphones"
+                            Name = "Sci-Fi"
                         },
                         new
                         {
                             CategoryId = 3,
                             DisplayOrder = 3,
-                            Name = "Tablets"
-                        },
-                        new
-                        {
-                            CategoryId = 4,
-                            DisplayOrder = 4,
-                            Name = "Gaming Consoles"
+                            Name = "History"
                         });
                 });
 
@@ -109,32 +106,32 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            City = "Budapest",
-                            Name = "Sony",
-                            PhoneNumber = "+36 1 317 4974",
-                            PostalCode = "1053",
-                            State = "Pest",
-                            StreetAddress = "Kecskeméti utca 4"
+                            City = "New York",
+                            Name = "Wood.co",
+                            PhoneNumber = "123-456-7890",
+                            PostalCode = "10001",
+                            State = "NY",
+                            StreetAddress = "1234 Elm St"
                         },
                         new
                         {
                             Id = 2,
-                            City = "Budapest",
-                            Name = "Apple",
-                            PhoneNumber = "+36 30 730 1143",
-                            PostalCode = "1095",
-                            State = "Pest",
-                            StreetAddress = "Könyves Kálmán krt 12-14"
+                            City = "New York",
+                            Name = "Paper.co",
+                            PhoneNumber = "123-456-7890",
+                            PostalCode = "10001",
+                            State = "NY",
+                            StreetAddress = "1234 Elm St"
                         },
                         new
                         {
                             Id = 3,
-                            City = "Seattle",
-                            Name = "Microsoft",
-                            PhoneNumber = "+800 426 9400",
-                            PostalCode = "95104",
-                            State = "Washington",
-                            StreetAddress = "920 Fourth Avenue, Suite 2900"
+                            City = "New York",
+                            Name = "Ink.co",
+                            PhoneNumber = "123-456-7890",
+                            PostalCode = "10001",
+                            State = "NY",
+                            StreetAddress = "1234 Elm St"
                         });
                 });
 
@@ -296,86 +293,86 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Brand = "Sony",
+                            Brand = "Billy Spark",
                             CategoryId = 1,
-                            Description = " The Sony WH-1000XM4 offers superior noise-cancellation, 30-hour battery life, and high-resolution audio quality. Equipped with touch sensor controls, quick attention mode, and wearing detection, these headphones provide an exceptional listening experience.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ImageUrl = "",
-                            ListPrice = 349.99000000000001,
-                            Price = 349.99000000000001,
-                            Price100 = 279.99000000000001,
-                            Price50 = 300.0,
-                            ProductName = "WH-1000XM4 Wireless Noise-Cancelling Headphones",
-                            SKU = "WH-1000XM4"
+                            ListPrice = 99.0,
+                            Price = 90.0,
+                            Price100 = 80.0,
+                            Price50 = 85.0,
+                            ProductName = "Fortune of Time",
+                            SKU = "SWD9999001"
                         },
                         new
                         {
                             Id = 2,
-                            Brand = "Apple",
+                            Brand = "Nancy Hoover",
                             CategoryId = 2,
-                            Description = "The Apple iPhone 14 Pro features a stunning 6.1-inch Super Retina XDR display, A16 Bionic chip, and an advanced camera system with ProRAW and ProRes video capabilities. With 5G support, Face ID, and a ceramic shield front cover, it offers unmatched performance and durability.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ImageUrl = "",
-                            ListPrice = 999.99000000000001,
-                            Price = 999.99000000000001,
-                            Price100 = 899.99000000000001,
-                            Price50 = 949.99000000000001,
-                            ProductName = "Apple iPhone 14 Pro",
-                            SKU = "IP14PRO"
+                            ListPrice = 40.0,
+                            Price = 30.0,
+                            Price100 = 20.0,
+                            Price50 = 25.0,
+                            ProductName = "Dark Skies",
+                            SKU = "CAW777777701"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Brand = "Julian Button",
+                            CategoryId = 1,
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
+                            ImageUrl = "",
+                            ListPrice = 55.0,
+                            Price = 50.0,
+                            Price100 = 35.0,
+                            Price50 = 40.0,
+                            ProductName = "Vanish in the Sunset",
+                            SKU = "RITO5555501"
                         },
                         new
                         {
                             Id = 4,
-                            Brand = "Microsoft",
+                            Brand = "Abby Muscles",
                             CategoryId = 3,
-                            Description = "The Microsoft Surface Pro 9 combines the power of a laptop with the flexibility of a tablet. It features a 13-inch PixelSense touchscreen, 11th Gen Intel Core processor, and up to 15 hours of battery life. With its detachable keyboard and Surface Pen compatibility, it's perfect for both work and creativity. ",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ImageUrl = "",
-                            ListPrice = 1199.99,
-                            Price = 1199.99,
-                            Price100 = 999.99000000000001,
-                            Price50 = 1100.0,
-                            ProductName = " Microsoft Surface Pro 9",
-                            SKU = "SURFACEPRO9"
+                            ListPrice = 70.0,
+                            Price = 65.0,
+                            Price100 = 55.0,
+                            Price50 = 60.0,
+                            ProductName = "Cotton Candy",
+                            SKU = "WS3333333301"
                         },
                         new
                         {
                             Id = 5,
-                            Brand = "Sony",
-                            CategoryId = 4,
-                            Description = "The Sony PlayStation 5 (PS5) is a cutting-edge gaming console that offers ultra-high-speed SSD, haptic feedback, adaptive triggers, and 3D audio technology. With stunning 4K graphics and lightning-fast load times, it delivers an immersive gaming experience. ",
+                            Brand = "Ron Parker",
+                            CategoryId = 1,
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ImageUrl = "",
-                            ListPrice = 499.99000000000001,
-                            Price = 499.99000000000001,
-                            Price100 = 349.99000000000001,
-                            Price50 = 400.0,
-                            ProductName = "Sony PlayStation 5",
-                            SKU = "PS5"
+                            ListPrice = 30.0,
+                            Price = 27.0,
+                            Price100 = 20.0,
+                            Price50 = 25.0,
+                            ProductName = "Rock in the Ocean",
+                            SKU = "SOTJ1111111101"
                         },
                         new
                         {
                             Id = 6,
-                            Brand = "Apple",
+                            Brand = "Laura Phantom",
                             CategoryId = 3,
-                            Description = " The Apple MacBook Pro 16-inch features a stunning Retina display, powerful M1 Pro chip, and up to 21 hours of battery life. With a Magic Keyboard, Touch Bar, and up to 64GB of unified memory, it’s designed for professionals who need high performance and versatility. ",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ImageUrl = "",
-                            ListPrice = 2499.9899999999998,
-                            Price = 2499.9899999999998,
-                            Price100 = 2199.9899999999998,
-                            Price50 = 2399.9899999999998,
-                            ProductName = "Apple MacBook Pro 16-inch",
-                            SKU = "MBP16M1PRO"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Brand = "Microsoft",
-                            CategoryId = 4,
-                            Description = " The Microsoft Xbox Series X is the most powerful Xbox ever, featuring a custom AMD Zen 2 processor, 12 teraflops of processing power, and support for 8K resolution. With a 1TB SSD and backward compatibility, it offers exceptional performance and an expansive game library.",
-                            ImageUrl = "",
-                            ListPrice = 499.99000000000001,
-                            Price = 499.99000000000001,
-                            Price100 = 399.99000000000001,
-                            Price50 = 450.0,
-                            ProductName = "Microsoft Xbox Series X",
-                            SKU = "XBOXSERIESX"
+                            ListPrice = 25.0,
+                            Price = 23.0,
+                            Price100 = 20.0,
+                            Price50 = 22.0,
+                            ProductName = "Leaves and Wonders",
+                            SKU = "FOT000000001"
                         });
                 });
 
