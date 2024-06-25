@@ -46,7 +46,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();
-builder.Services.AddScoped<IDbInitalizer, DbInitalizer>();
+builder.Services.AddScoped<IDbInitalizer, DbInitializer>();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -82,6 +82,6 @@ void SeedDatabase()
 	using (var scope = app.Services.CreateScope())
 	{
 		var dbInit = scope.ServiceProvider.GetRequiredService<IDbInitalizer>();
-		dbInit.Initalize();
+		dbInit.Initialize();
 	}
 }

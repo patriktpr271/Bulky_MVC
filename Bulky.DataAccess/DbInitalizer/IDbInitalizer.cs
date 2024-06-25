@@ -8,6 +8,6 @@ namespace Bulky.DataAccess.DbInitalizer
 {
 	public interface IDbInitalizer
 	{
-		public void Initalize();
+		public void Initialize();
 	}
 }
