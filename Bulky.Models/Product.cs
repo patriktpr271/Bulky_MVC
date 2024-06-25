@@ -10,34 +10,36 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Bulky.Models
 {
+    //this class is used to store the product details. the products will be tech gadgets and accessories
     public class Product
     {
         [Key]
         public int Id { get; set; }
         // Name of the category
         [Required]
-        public string Title { get; set; }
+        [Display(Name = "Product Name")]
+        public string ProductName { get; set; }
         public string Description { get; set; }
         [Required]
-        public string ISBN { get; set; }
+        public string SKU { get; set; } //stock keeping unit which is a unique identifier for each product
         [Required]
-        public string Author { get; set; }
+        public string Brand { get; set; } //this will stzore the brand or manufacturer of the product (e.g. Apple, Samsung, etc)
 
         [Required]
         [Display(Name = "List Price")]
-        [Range(1, 1000)]
+        [Range(1, 3500)]
         public double ListPrice { get; set; }
         [Required]
         [Display(Name = "Price for 1-50")]
-        [Range(1,1000)]
+        [Range(1, 3500)]
         public double Price { get; set; }
         [Required]
         [Display(Name = "Price for 50-100")]
-        [Range(1, 1000)]
+        [Range(1, 3500)]
         public double Price50 { get; set; }
         [Required]
         [Display(Name = "Price for 100+")]
-        [Range(1, 1000)]
+        [Range(1, 3500)]
         public double Price100 { get; set; }
 
         public int CategoryId { get; set; } 

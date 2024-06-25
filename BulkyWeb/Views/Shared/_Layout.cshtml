@@ -1,11 +1,13 @@
 ﻿@using Bulky.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - BulkyWeb</title>
+	<title>@ViewData["Title"] - Techy</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 	<link rel="stylesheet" href="~/BulkyWeb.styles.css" asp-append-version="true" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -18,7 +20,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
 			<div class="container-fluid">
-				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyWeb</a>
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Techy</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -48,14 +50,30 @@
 										<a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
 									</li>
 								<li><hr class="dropdown-divider"></li>
+									<li class="nav-item">
+										<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Create user</a>
+									</li>
 							</ul>
 						</li>
 						}
-						<li class="nav-item">
-							<a class="nav-link" asp-area="Customer" asp-controller="ShoppingCart" asp-action="Index">
-								<i class="bi bi-cart"></i> &nbsp; (0)
-							</a>
-						</li>
+						@if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.SessionShoppingCart) != null)
+						{
+							<li class="nav-item">
+								<a class="nav-link" asp-area="Customer" asp-controller="ShoppingCart" asp-action="Index">
+									<i class="bi bi-cart"></i> &nbsp;
+											(@HttpContextAccessor.HttpContext.Session.GetInt32(SD.SessionShoppingCart))
+								</a>
+							</li>
+						}
+						else
+						{	
+							<li class="nav-item">
+								<a class="nav-link" asp-area="Customer" asp-controller="ShoppingCart" asp-action="Index">
+									<i class="bi bi-cart"></i> &nbsp;
+											(0)
+								</a>
+							</li>
+						}
 					</ul>
 					<partial name="_LoginPartial"/>
 				</div>
@@ -70,8 +88,8 @@
 	</div>
 
 	<footer class="border-top footer bg-primary text-muted">
-		<div class="text-center">
-			Made with <i class="bi bi-heart-fill"></i> by DotNetMastery
+		<div class="text-danger text-center">
+			Disclaimer: This site is for reference purposes only. We are not selling any products through this site.
 		</div>
 	</footer>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>

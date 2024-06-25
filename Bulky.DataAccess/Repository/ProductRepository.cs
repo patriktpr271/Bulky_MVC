@@ -26,15 +26,15 @@ namespace Bulky.DataAccess.Repository
 				{
 					objFromDb.ImageUrl = product.ImageUrl;
 				}
-				objFromDb.Title = product.Title;
-				objFromDb.ISBN = product.ISBN;
+				objFromDb.ProductName = product.ProductName;
+				objFromDb.SKU = product.SKU;
 				objFromDb.Price = product.Price;
 				objFromDb.Price50 = product.Price50;
 				objFromDb.Price100 = product.Price100;
 				objFromDb.ListPrice = product.ListPrice;
 				objFromDb.Description = product.Description;
 				objFromDb.CategoryId = product.CategoryId;
-				objFromDb.Author = product.Author;
+				objFromDb.Brand = product.Brand;
 			}
 		}
 	}

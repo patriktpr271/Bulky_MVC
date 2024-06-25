@@ -158,7 +158,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 						Currency = "usd",
 						ProductData = new SessionLineItemPriceDataProductDataOptions
 						{
-							Name = item.Product.Title
+							Name = item.Product.ProductName
 						}
 					},
 					Quantity = item.Count

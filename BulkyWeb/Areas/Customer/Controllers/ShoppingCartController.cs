@@ -149,7 +149,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 							Currency = "usd",
 							ProductData = new SessionLineItemPriceDataProductDataOptions
 							{
-								Name = item.Product.Title
+								Name = item.Product.ProductName
 							}
 						},
 						Quantity = item.Count
@@ -187,6 +187,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 				}
 				
 			}
+			HttpContext.Session.Clear();
 			List<ShoppingCart> shoppingCartList = _unitOfWork.ShoppingCart.
 				GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
 			_unitOfWork.ShoppingCart.RemoveRange(shoppingCartList);
@@ -211,14 +212,16 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			{
 				//remove that from cart
 				_unitOfWork.ShoppingCart.Remove(cartFromDb);
+				_unitOfWork.Save();
+				HttpContext.Session.SetInt32(SD.SessionShoppingCart,
+				_unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == cartFromDb.ApplicationUserId).Count());
 			}
 			else
 			{
 				cartFromDb.Count -= 1;
 				_unitOfWork.ShoppingCart.Update(cartFromDb);
+				_unitOfWork.Save();
 			}
-
-			_unitOfWork.Save();
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -227,6 +230,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
 			_unitOfWork.ShoppingCart.Remove(cartFromDb);
 			_unitOfWork.Save();
+			HttpContext.Session.SetInt32(SD.SessionShoppingCart, 
+				_unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == cartFromDb.ApplicationUserId).Count());
 			return RedirectToAction(nameof(Index));
 		}
 

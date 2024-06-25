@@ -25,40 +25,41 @@ namespace Bulky.DataAccess.Data
 			base.OnModelCreating(modelBuilder);
 
 			modelBuilder.Entity<Category>().HasData(
-				new Category { CategoryId = 1, Name = "Action", DisplayOrder = 1 },
-				new Category { CategoryId = 2, Name = "Sci-Fi", DisplayOrder = 2 },
-				new Category { CategoryId = 3, Name = "History", DisplayOrder = 3 }
+				new Category { CategoryId = 1, Name = "Headphones", DisplayOrder = 1 },
+				new Category { CategoryId = 2, Name = "Smartphones", DisplayOrder = 2 },
+				new Category { CategoryId = 3, Name = "Tablets", DisplayOrder = 3 },
+				new Category { CategoryId = 4, Name = "Gaming Consoles", DisplayOrder = 4 }
 			);
 
 			modelBuilder.Entity<Company>().HasData(
 				new Company {
 					Id = 1,
-					Name = "Wood.co",
-					StreetAddress = "1234 Elm St",
-					City = "New York",
-					State = "NY",
-					PostalCode = "10001",
-					PhoneNumber = "123-456-7890",
+					Name = "Sony",
+					StreetAddress = "Kecskeméti utca 4",
+					City = "Budapest",
+					State = "Pest",
+					PostalCode = "1053",
+					PhoneNumber = "+36 1 317 4974",
 				},
 				new Company
 				{
 					Id = 2,
-					Name = "Paper.co",
-					StreetAddress = "1234 Elm St",
-					City = "New York",
-					State = "NY",
-					PostalCode = "10001",
-					PhoneNumber = "123-456-7890",
+					Name = "Apple",
+					StreetAddress = "Könyves Kálmán krt 12-14",
+					City = "Budapest",
+					State = "Pest",
+					PostalCode = "1095",
+					PhoneNumber = "+36 30 730 1143",
 				},
 				new Company
 				{
 					Id = 3,
-					Name = "Ink.co",
-					StreetAddress = "1234 Elm St",
-					City = "New York",
-					State = "NY",
-					PostalCode = "10001",
-					PhoneNumber = "123-456-7890",
+					Name = "Microsoft",
+					StreetAddress = "920 Fourth Avenue, Suite 2900",
+					City = "Seattle",
+					State = "Washington",
+					PostalCode = "95104",
+					PhoneNumber = "+800 426 9400",
 				}
 			);
 
@@ -66,85 +67,91 @@ namespace Bulky.DataAccess.Data
 				new Product
 				{
 					Id = 1,
-					Title = "Fortune of Time",
-					Author = "Billy Spark",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "SWD9999001",
-					ListPrice = 99,
-					Price = 90,
-					Price50 = 85,
-					Price100 = 80,
+					ProductName = "WH-1000XM4 Wireless Noise-Cancelling Headphones",
+					Brand = "Sony",
+					Description = " The Sony WH-1000XM4 offers superior noise-cancellation, 30-hour battery life, and high-resolution audio quality." +
+					" Equipped with touch sensor controls, quick attention mode, and wearing detection, these headphones provide an exceptional listening experience.",
+					SKU = "WH-1000XM4",
+					ListPrice = 349.99,
+					Price = 349.99,
+					Price50 = 300,
+					Price100 = 279.99,
 					CategoryId = 1,
 					ImageUrl = ""
 				},
 				new Product
 				{
 					Id = 2,
-					Title = "Dark Skies",
-					Author = "Nancy Hoover",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "CAW777777701",
-					ListPrice = 40,
-					Price = 30,
-					Price50 = 25,
-					Price100 = 20,
+					ProductName = "Apple iPhone 14 Pro",
+					Brand = "Apple",
+					Description = "The Apple iPhone 14 Pro features a stunning 6.1-inch Super Retina XDR display, A16 Bionic chip, and an advanced camera system with ProRAW and ProRes video capabilities." +
+					" With 5G support, Face ID, and a ceramic shield front cover, it offers unmatched performance and durability.",
+					SKU = "IP14PRO",
+					ListPrice = 999.99,
+					Price = 999.99,
+					Price50 = 949.99,
+					Price100 = 899.99,
 					CategoryId = 2,
 					ImageUrl = ""
-				},
-				new Product
-				{
-					Id = 3,
-					Title = "Vanish in the Sunset",
-					Author = "Julian Button",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "RITO5555501",
-					ListPrice = 55,
-					Price = 50,
-					Price50 = 40,
-					Price100 = 35,
-					CategoryId = 1,
-					ImageUrl = ""
-				},
+				},			
 				new Product
 				{
 					Id = 4,
-					Title = "Cotton Candy",
-					Author = "Abby Muscles",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "WS3333333301",
-					ListPrice = 70,
-					Price = 65,
-					Price50 = 60,
-					Price100 = 55,
+					ProductName = " Microsoft Surface Pro 9",
+					Brand = "Microsoft",
+					Description = "The Microsoft Surface Pro 9 combines the power of a laptop with the flexibility of a tablet. It features a 13-inch PixelSense touchscreen, 11th Gen Intel Core processor, and up to 15 hours of battery life. " +
+					"With its detachable keyboard and Surface Pen compatibility, it's perfect for both work and creativity. ",
+					SKU = "SURFACEPRO9",
+					ListPrice = 1199.99,
+					Price = 1199.99,
+					Price50 = 1100,
+					Price100 = 999.99,
 					CategoryId = 3,
 					ImageUrl = ""
 				},
 				new Product
 				{
 					Id = 5,
-					Title = "Rock in the Ocean",
-					Author = "Ron Parker",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "SOTJ1111111101",
-					ListPrice = 30,
-					Price = 27,
-					Price50 = 25,
-					Price100 = 20,
-					CategoryId = 1,
+					ProductName = "Sony PlayStation 5",
+					Brand = "Sony",
+					Description = "The Sony PlayStation 5 (PS5) is a cutting-edge gaming console that offers ultra-high-speed SSD, haptic feedback, adaptive triggers, and 3D audio technology." +
+					" With stunning 4K graphics and lightning-fast load times, it delivers an immersive gaming experience. ",
+					SKU = "PS5",
+					ListPrice = 499.99,
+					Price = 499.99,
+					Price50 = 400,
+					Price100 = 349.99,
+					CategoryId = 4,
 					ImageUrl = ""
 				},
 				new Product
 				{
 					Id = 6,
-					Title = "Leaves and Wonders",
-					Author = "Laura Phantom",
-					Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-					ISBN = "FOT000000001",
-					ListPrice = 25,
-					Price = 23,
-					Price50 = 22,
-					Price100 = 20,
+					ProductName = "Apple MacBook Pro 16-inch",
+					Brand = "Apple",
+					Description = " The Apple MacBook Pro 16-inch features a stunning Retina display, powerful M1 Pro chip, and up to 21 hours of battery life." +
+					" With a Magic Keyboard, Touch Bar, and up to 64GB of unified memory, it’s designed for professionals who need high performance and versatility. ",
+					SKU = "MBP16M1PRO",
+					ListPrice = 2499.99,
+					Price = 2499.99,
+					Price50 = 2399.99,
+					Price100 = 2199.99,
 					CategoryId = 3,
+					ImageUrl = ""
+				},
+				new Product
+				{
+					Id = 7,
+					ProductName = "Microsoft Xbox Series X",
+					Brand = "Microsoft",
+					Description = " The Microsoft Xbox Series X is the most powerful Xbox ever, featuring a custom AMD Zen 2 processor, 12 teraflops of processing power, and support for 8K resolution. " +
+					"With a 1TB SSD and backward compatibility, it offers exceptional performance and an expansive game library.",
+					SKU = "XBOXSERIESX",
+					ListPrice = 499.99,
+					Price = 499.99,
+					Price50 = 450,
+					Price100 = 399.99,
+					CategoryId = 4,
 					ImageUrl = ""
 				}
 			);
