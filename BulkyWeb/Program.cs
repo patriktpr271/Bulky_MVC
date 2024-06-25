@@ -1,4 +1,5 @@
 using Bulky.DataAccess.Data;
+using Bulky.DataAccess.DbInitalizer;
 using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Utility;
@@ -45,6 +46,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddScoped<IEmailSender, EmailSender>();
+builder.Services.AddScoped<IDbInitalizer, DbInitalizer>();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -66,10 +68,20 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
-app.MapRazorPages();
+SeedDatabase();
 
+app.MapRazorPages();
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedDatabase()
+{
+	using (var scope = app.Services.CreateScope())
+	{
+		var dbInit = scope.ServiceProvider.GetRequiredService<IDbInitalizer>();
+		dbInit.Initalize();
+	}
+}
