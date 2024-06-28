@@ -139,7 +139,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 			OrderVM.OrderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == OrderVM.OrderHeader.Id, includeProperties: "ApplicationUser");
 			OrderVM.OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderHeaderId == OrderVM.OrderHeader.Id, includeProperties: "Product");
 
-			var domain = "https://localhost:7034/";
+			var domain = Request.Scheme + "://" + Request.Host.Value + "/";
+
 			var options = new SessionCreateOptions
 			{
 				SuccessUrl = domain + $"admin/order/PaymentConfirmation?OrderHeaderId={OrderVM.OrderHeader.Id}",
