@@ -38,6 +38,10 @@ Use the following credentials to log in as the admin user:
 - **Email**: admin@gmail.com
 - **Password**: Admin123@
 
+### Live Demo
+You can access the live application hosted on Azure via the following link:
+[Techy_MVC on Azure](https://techy.azurewebsites.net/)
+
 ## Features
 - **Authorization and Authentication**
 - **Role Management**: Admin, Employee, Customer, Company
