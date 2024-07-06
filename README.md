@@ -33,6 +33,11 @@ To set up the project, follow these steps:
 3. Use the provided roles and features for various user interactions, including admin tasks, employee management, customer shopping, and company operations.
 4. Utilize Stripe payment and Facebook login features as needed.
 
+### Default Admin User
+Use the following credentials to log in as the admin user:
+- **Email**: admin@gmail.com
+- **Password**: Admin123@
+
 ## Features
 - **Authorization and Authentication**
 - **Role Management**: Admin, Employee, Customer, Company
