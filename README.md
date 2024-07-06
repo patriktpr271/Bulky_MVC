@@ -49,5 +49,9 @@ You can access the live application hosted on Azure via the following link:
 - **Facebook Login**
 - **Delivery System**
 
+## Work in Progress
+- **User Management for Admins**
+- **Statistics Page for Recent Orders (for Employees and Admins)**
+
 ## Contact Information
 For questions or support, please contact timapatrik27@gmail.com
