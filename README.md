@@ -40,11 +40,5 @@ To set up the project, follow these steps:
 - **Facebook Login**
 - **Delivery System**
 
-## Contributing Guidelines
-We welcome contributions! Please fork the repository and submit pull requests for any enhancements or bug fixes. Ensure your code follows the existing coding standards and include appropriate tests.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 ## Contact Information
-For questions or support, please contact [your email].
+For questions or support, please contact timapatrik27@gmail.com
